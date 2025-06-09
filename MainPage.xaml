@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="A2Layan.MainPage"
+    Title="Dice Game">
+
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="15"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+
+        <Label
+          
+          Text="Click the button to roll the dice"
+          FontSize="18"
+          HorizontalOptions="Center" />
+
+        <!-- Three dice images; the third is hidden by default -->
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+           
+        
+    
+            <Image
+                x:Name="DiceImage1"
+                Source="placeholder.png"
+                WidthRequest="150"
+                HeightRequest="150" />
+            <Image
+                x:Name="DiceImage2"
+                Source="placeholder.png"
+                WidthRequest="150"
+                HeightRequest="150" />
+            <Image
+                x:Name="DiceImage3"
+                Source="placeholder.png"
+                WidthRequest="150"
+                HeightRequest="150"
+                IsVisible="False" />
+        </HorizontalStackLayout>
+
+        <!-- Labels for total and result -->
+        <Label
+            x:Name="SumLabel"
+            Text="Click the button to roll the dice"
+            FontSize="18"
+            HorizontalOptions="Center" />
+        <Label
+            x:Name="ResultLabel"
+            Text=" "
+            FontSize="18"
+            TextColor="Black"
+            HorizontalOptions="Center" />
+
+        <!-- Roll and Reset buttons -->
+        <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+            <Button
+                Text="Roll Dice"
+                Clicked="RollDice_Clicked"
+                WidthRequest="120"
+                BackgroundColor="Purple"/>
+            <Button
+                Text="Reset"
+                Clicked="Reset_Clicked"
+                WidthRequest="120"
+                BackgroundColor="Purple"/>
+        </HorizontalStackLayout>
+
+        <!-- Toggle switch for two‐dice vs three‐dice mode -->
+        <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Spacing="10">
+            <Label Text="Three-Dice Mode" VerticalOptions="Center" />
+            <Switch
+                x:Name="ToggleMode"
+                Toggled="ToggleMode_Toggled" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>
